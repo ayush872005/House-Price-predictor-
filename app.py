@@ -22,6 +22,10 @@ st.markdown(
     <style>
     .block-container { max-width: 1120px; padding-top: 2.2rem; padding-bottom: 3rem; }
     [data-testid="stMetric"] { background: #f4f7f5; border: 1px solid #e1e9e3; padding: 1rem 1.1rem; border-radius: 14px; }
+    .result-card { background: #ffffff; border: 2px solid #176b4b; border-radius: 16px; padding: 1.35rem 1.5rem; margin: 1rem 0; box-shadow: 0 8px 24px rgba(23, 107, 75, .12); }
+    .result-label { color: #176b4b; font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .35rem; }
+    .result-value { color: #10251c; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.1; margin: 0; }
+    .result-note { color: #41534a; font-size: .9rem; margin-top: .6rem; }
     .eyebrow { color: #31805c; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; font-size: .78rem; }
     .muted { color: #63716a; }
     div.stButton > button[kind="primary"] { background: #176b4b; border-color: #176b4b; }
@@ -79,8 +83,16 @@ if submitted:
     )
     estimate = float(model.predict(values)[0])
     st.divider()
-    st.markdown("### Estimated value")
-    st.metric("Model estimate · dataset price units", f"{estimate:,.0f}")
+    st.markdown(
+        f"""
+        <div class="result-card" role="status" aria-live="polite">
+            <div class="result-label">Estimated value</div>
+            <p class="result-value">{estimate:,.0f}</p>
+            <div class="result-note">Model estimate · dataset price units</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
     st.caption("The estimate reflects patterns in the training data and may differ substantially from a real market valuation.")
 else:
     st.divider()
