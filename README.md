@@ -4,6 +4,9 @@ A Streamlit machine-learning demo that estimates a property's price from five fe
 
 ## Demo
 
+- **Live app:** https://homevalue-ayush872005.streamlit.app/
+- **Source code:** https://github.com/ayush872005/House-Price-predictor-
+
 The app loads the included scikit-learn model and presents estimates in the original dataset's price units. The training data does not establish a reliable currency or market context, so the app intentionally does not label the estimate with a currency symbol. This is an educational project, not a property appraisal.
 
 ## Run locally
@@ -23,10 +26,7 @@ streamlit run app.py
 
 ## Deploy on Streamlit Community Cloud
 
-1. Create a GitHub repository and upload the contents of this folder (`app.py`, `model.pkl`, `requirements.txt`, `README.md`, and `.gitignore`).
-2. Sign in to [Streamlit Community Cloud](https://share.streamlit.io/) with GitHub and authorize the repository.
-3. Choose **Create app**, select the repository and branch, and set the main file path to `app.py`.
-4. Deploy. Streamlit installs the packages listed in `requirements.txt` and loads `model.pkl` from the repository root.
+This project is already published at [homevalue-ayush872005.streamlit.app](https://homevalue-ayush872005.streamlit.app/). To redeploy it, sign in to [Streamlit Community Cloud](https://share.streamlit.io/), choose **Create app**, select `ayush872005/House-Price-predictor-` on the `main` branch, set the main file to `app.py`, and choose Python 3.13 in Advanced settings. The app uses the dependencies in `requirements.txt` and loads `model.pkl` from the repository root.
 
 No secrets or external API keys are required. Do not commit credentials if you extend the project later.
 
@@ -55,6 +55,7 @@ The feature names and order match the estimator's training schema. The app sends
 
 ## Resume-ready summary
 
-**House Price Estimator | Python, scikit-learn, Streamlit** — Built an interactive regression app that serves a trained GridSearchCV model, validates property inputs, and exposes estimates through a responsive web interface.
+**House Price Estimator | Python, scikit-learn, Streamlit** — Built and deployed an interactive regression app that serves a trained GridSearchCV model, validates property inputs, and exposes estimates through a responsive web interface.
 
 Only say “deployed” on your resume after you have published the app and confirmed its public URL works. You can then add the live demo link and your GitHub repository link.
+
